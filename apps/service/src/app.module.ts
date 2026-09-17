@@ -66,9 +66,13 @@ require('dotenv').config()
             InvoiceScheduleSchema,
           ],
           logging: false,
-          sync: {
-            force: true,
-          },
+          // `sync: { force: true }` DROPS AND RECREATES every table on boot. On
+          // serverless that means each cold start wipes the database, so it is now
+          // opt-in via DB_SYNC_FORCE and must never be set outside a scratch DB.
+          // Without it @nestjs/sequelize still syncs non-destructively.
+          ...(process.env.DB_SYNC_FORCE === 'true' && {
+            sync: { force: true },
+          }),
         };
       },
     }),

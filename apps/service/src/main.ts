@@ -22,8 +22,12 @@ async function bootstrap() {
 
   // await app.startAllMicroservices();
 
-  if (env.get('env') === 'dev' || process.env.NODE_ENV === 'dev') await app.listen(env.get('port'), env.get('host'));
-  else await app.listen(env.get('port'))
+  // Vercel captures the server from this listen() call and routes to it over an
+  // internal port, so the value passed here only matters locally and in Docker.
+  const port = Number(process.env.PORT ?? env.get('port'));
+
+  if (env.get('env') === 'dev' || process.env.NODE_ENV === 'dev') await app.listen(port, env.get('host'));
+  else await app.listen(port)
 }
 
 bootstrap();

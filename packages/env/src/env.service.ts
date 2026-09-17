@@ -30,8 +30,11 @@ export class EnvService<T extends object> {
   }
 
   private load(path: string): T {
-    if (process.env.NODE_ENV === "staging") {
-      return this.loadDotenv();
+    // Managed platforms (Vercel et al.) have no config/ directory to read: the whole
+    // config blob arrives as a single env var instead. Preferred whenever it is set,
+    // so it works in production too, not just under NODE_ENV=staging.
+    if (process.env.CONFIG_JSON || process.env.NODE_ENV === "staging") {
+      return this.loadFromEnv();
     }
 
     // get root apps path
@@ -45,7 +48,7 @@ export class EnvService<T extends object> {
     return JSON.parse(jsonFile || "{}");
   }
 
-  private loadDotenv(): T {
+  private loadFromEnv(): T {
     const configJson = process.env.CONFIG_JSON;
 
     if (!configJson) throw new Error("CONFIG_JSON is required in the environment");

@@ -1,15 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "builds": [
-    {
-      "src": "src/main.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "dist/main.mjs"
-    }
-  ]
+  "buildCommand": "cd ../.. && pnpm --filter \"@nhl/*\" build"
 }
