@@ -25,8 +25,14 @@ async function bootstrap() {
   // Vercel captures the server from this listen() call and routes to it over an
   // internal port, so the value passed here only matters locally and in Docker.
   const port = Number(process.env.PORT ?? env.get('port'));
+  const isDev = env.get('env') === 'dev' || process.env.NODE_ENV === 'dev';
 
-  if (env.get('env') === 'dev' || process.env.NODE_ENV === 'dev') await app.listen(port, env.get('host'));
+  // `host` is an @IsUrl() value, not a bind address. Locally it resolves to
+  // loopback so binding to it happens to work, but on Vercel it resolves to a
+  // public IP the container cannot bind -> EADDRNOTAVAIL. Note Environment.Production
+  // is also "dev", so this branch is taken in every environment. Bind all
+  // interfaces whenever we are not on a developer machine.
+  if (isDev && !process.env.VERCEL) await app.listen(port, env.get('host'));
   else await app.listen(port)
 }
 
