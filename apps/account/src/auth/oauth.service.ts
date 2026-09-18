@@ -1,5 +1,5 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { ClientSchema } from '../common/schema/account';
+import { ClientSchema } from '../common/schema/account/index.js';
 import * as jwt from 'jsonwebtoken';
 
 @Injectable()

@@ -4,7 +4,7 @@ import * as path from "path";
 import { Path, PathValue } from "@nestjs/config";
 import { ClassConstructor, plainToInstance } from "class-transformer";
 import { validateSync } from "class-validator";
-import { CustomConfigModuleOptions } from "./common/module/config.module-definition";
+import { CustomConfigModuleOptions } from "./common/module/config.module-definition.js";
 @Injectable()
 export class EnvService<T extends object> {
   private readonly env: T;

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "nodenext",
     "target": "es2017",
     "declaration": true,
     "removeComments": true,
@@ -18,7 +18,14 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "types": ["node", "multer"],
-    "typeRoots": ["./node_modules/@types"]
+    "types": [
+      "node",
+      "multer"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "moduleResolution": "nodenext",
+    "useDefineForClassFields": false
   }
 }

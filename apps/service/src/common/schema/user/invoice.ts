@@ -1,5 +1,5 @@
 import { Column, DataType, PrimaryKey, Table } from 'sequelize-typescript';
-import { BaseEntity } from '../base';
+import { BaseEntity } from '../base/index.js';
 
 @Table({ tableName: 'invoices' })
 export class InvoiceSchema extends BaseEntity {

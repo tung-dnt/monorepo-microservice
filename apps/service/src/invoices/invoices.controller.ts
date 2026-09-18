@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
-import { InvoicesService } from './invoices.service';
+import { InvoicesService } from './invoices.service.js';
 
 @Controller('invoices')
 export class InvoicesController {

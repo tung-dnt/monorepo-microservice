@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { FilePostService } from './filepost.service';
+import { FilePostService } from './filepost.service.js';
 
 @Module({
   providers: [FilePostService],

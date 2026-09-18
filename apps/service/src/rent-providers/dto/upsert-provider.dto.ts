@@ -1,4 +1,4 @@
-import { RentProviderSchema } from '../../common/schema/user';
+import { RentProviderSchema } from '../../common/schema/user/index.js';
 
 export class UpsertRentProviderDto {
   providerCode: number;

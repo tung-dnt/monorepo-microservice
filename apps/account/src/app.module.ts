@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController } from './app.controller.js';
+import { AppService } from './app.service.js';
 import { EnvModule, EnvService } from '@nhl/env';
-import { RoleSchema, AccountSchema } from './common/schema/user';
-import { AuthCodeSchema, ClientSchema } from './common/schema/account';
-import { Env } from './common/env';
+import { RoleSchema, AccountSchema } from './common/schema/user/index.js';
+import { AuthCodeSchema, ClientSchema } from './common/schema/account/index.js';
+import { Env } from './common/env.js';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './auth/auth.module.js';
 @Module({
   imports: [
     EnvModule.register({ path: '/config/env.json', class: Env }),

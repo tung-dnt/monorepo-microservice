@@ -1,7 +1,7 @@
 import { BelongsToMany, Column, PrimaryKey, Table } from "sequelize-typescript";
-import { BaseEntity } from "../base";
-import { LocationSchema } from "./location";
-import { ExpenseLocationSchema } from "./expense-location";
+import { BaseEntity } from "../base/index.js";
+import { LocationSchema } from "./location.js";
+import { ExpenseLocationSchema } from "./expense-location.js";
 
 @Table({ tableName: "expenses" })
 export class ExpenseSchema extends BaseEntity {

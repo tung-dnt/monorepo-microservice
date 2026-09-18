@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { TenantModel, TenantSchema } from '../common/schema/user';
+import { TenantModel, TenantSchema } from '../common/schema/user/index.js';
 import { InjectModel } from '@nestjs/sequelize';
-import { PaginatedQuery, paginatedQuery } from '../common/pagination';
-import { FilePostService } from '../filepost/filepost.service';
-import { TenantLocationModel, TenantLocationSchema } from '../common/schema/user';
+import { PaginatedQuery, paginatedQuery } from '../common/pagination.js';
+import { FilePostService } from '../filepost/filepost.service.js';
+import { TenantLocationModel, TenantLocationSchema } from '../common/schema/user/index.js';
 import { Op } from 'sequelize';
 import 'multer';
 

@@ -1,12 +1,12 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
-import { AppService } from './app.service';
+import { AppService } from './app.service.js';
 import {
   ConfirmEmailPayload,
   ConfirmRegisterPayload,
   LoginPayload,
   RegisterPayload,
-} from './common/interface';
-import { TokenIntrospectionDto } from './common/dto';
+} from './common/interface.js';
+import { TokenIntrospectionDto } from './common/dto.js';
 
 @Controller('account')
 export class AppController {

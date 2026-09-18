@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "nodenext",
     "target": "es2017",
     "declaration": true,
     "declarationMap": true,
@@ -19,7 +19,11 @@
     "noFallthroughCasesInSwitch": false,
     "noEmit": true,
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "moduleResolution": "nodenext",
+    "useDefineForClassFields": false
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

@@ -1,7 +1,8 @@
 import { IsNumber, IsObject } from 'class-validator';
-import { Model, ModelCtor } from 'sequelize-typescript';
+import { Model, type ModelCtor } from 'sequelize-typescript';
 import { Expose, Transform, plainToClass } from 'class-transformer';
-import { size } from 'lodash';
+import lodash from 'lodash';
+const { size } = lodash;
 
 export class PaginatedQuery {
   //   @IsObject()

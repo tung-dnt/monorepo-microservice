@@ -1,6 +1,6 @@
 import { Column, ForeignKey, Model, PrimaryKey, Table } from 'sequelize-typescript';
-import { LocationSchema } from './location';
-import { TenantSchema } from './tenant';
+import { LocationSchema } from './location.js';
+import { TenantSchema } from './tenant.js';
 
 @Table({ tableName: 'tenant_locations', timestamps: false })
 export class TenantLocationSchema extends Model {

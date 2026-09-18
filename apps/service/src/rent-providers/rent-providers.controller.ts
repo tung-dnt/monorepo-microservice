@@ -8,7 +8,7 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
-import { RentProvidersService } from './rent-providers.service';
+import { RentProvidersService } from './rent-providers.service.js';
 
 @Controller('rent-provider')
 export class RentProvidersController {

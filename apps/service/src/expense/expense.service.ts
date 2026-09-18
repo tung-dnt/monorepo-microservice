@@ -5,8 +5,8 @@ import {
   ExpenseLocationSchema,
   ExpenseModel,
   ExpenseSchema,
-} from '../common/schema/user';
-import { PaginatedQuery, paginatedQuery } from '../common/pagination';
+} from '../common/schema/user/index.js';
+import { PaginatedQuery, paginatedQuery } from '../common/pagination.js';
 
 @Injectable()
 export class ExpenseService {

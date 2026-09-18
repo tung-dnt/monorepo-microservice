@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { TenantService } from './tenant.service';
-import { TenantController } from './tenant.controller';
+import { TenantService } from './tenant.service.js';
+import { TenantController } from './tenant.controller.js';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { TenantLocationSchema, TenantSchema } from '../common/schema/user';
-import { FilePostModule } from '../filepost/filepost.module';
+import { TenantLocationSchema, TenantSchema } from '../common/schema/user/index.js';
+import { FilePostModule } from '../filepost/filepost.module.js';
 
 @Module({
   imports: [SequelizeModule.forFeature([TenantSchema, TenantLocationSchema]), FilePostModule],

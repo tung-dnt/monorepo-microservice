@@ -1,5 +1,5 @@
 import { Column, DataType, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
-import { RoleSchema } from "./role";
+import { RoleSchema } from "./role.js";
 
 @Table({ tableName: "accounts", timestamps: false })
 export class AccountSchema extends Model<AccountSchema> {

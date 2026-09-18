@@ -11,7 +11,7 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { TenantService } from './tenant.service';
+import { TenantService } from './tenant.service.js';
 import 'multer';
 
 @Controller('tenant')

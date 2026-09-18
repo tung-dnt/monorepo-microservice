@@ -1,7 +1,7 @@
 import { BelongsToMany, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
-import { RentProviderSchema } from "./rent-provider";
-import { ExpenseSchema } from "./expense";
-import { ExpenseLocationSchema } from "./expense-location";
+import { RentProviderSchema } from "./rent-provider.js";
+import { ExpenseSchema } from "./expense.js";
+import { ExpenseLocationSchema } from "./expense-location.js";
 
 @Table({ tableName: "locations", timestamps: false })
 export class LocationSchema extends Model {

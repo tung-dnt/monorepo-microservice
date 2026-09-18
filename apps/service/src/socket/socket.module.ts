@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ServiceWebSocket } from './socket.adapter';
+import { ServiceWebSocket } from './socket.adapter.js';
 
 @Module({
   providers: [ServiceWebSocket],

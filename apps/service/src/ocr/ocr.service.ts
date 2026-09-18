@@ -6,9 +6,9 @@ import {
 } from '@nestjs/common';
 import { Environment, EnvService } from '@nhl/env';
 import { GoogleGenAI } from "@google/genai";
-import { Env } from '../common/env';
-import { parseObjectFromContent } from '../common/util';
-import { IElectricMeterImageResponse } from '../common/interface';
+import { Env } from '../common/env.js';
+import { parseObjectFromContent } from '../common/util.js';
+import { IElectricMeterImageResponse } from '../common/interface.js';
 
 @Injectable()
 export class OcrService {

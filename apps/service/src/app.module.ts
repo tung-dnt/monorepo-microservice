@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
+import { AppController } from './app.controller.js';
 import { EnvModule, EnvService } from '@nhl/env';
-import { Env } from './common/env';
-import { RentProvidersModule } from './rent-providers/rent-providers.module';
-import { TenantModule } from './tenant/tenant.module';
+import { Env } from './common/env.js';
+import { RentProvidersModule } from './rent-providers/rent-providers.module.js';
+import { TenantModule } from './tenant/tenant.module.js';
 import { SequelizeModule } from '@nestjs/sequelize';
 import {
   RentProviderSchema,
@@ -14,13 +14,14 @@ import {
   InvoiceSchema,
   InvoiceExpenseSchema,
   InvoiceScheduleSchema,
-} from './common/schema/user';
-import { LocationsModule } from './locations/locations.module';
-import { ExpenseSchema } from './common/schema/user/expense';
-import { ExpenseModule } from './expense/expense.module';
-import { InvoicesModule } from './invoices/invoices.module';
-import { OcrModule } from './ocr/ocr.module';
-require('dotenv').config()
+} from './common/schema/user/index.js';
+import { LocationsModule } from './locations/locations.module.js';
+import { ExpenseSchema } from './common/schema/user/expense.js';
+import { ExpenseModule } from './expense/expense.module.js';
+import { InvoicesModule } from './invoices/invoices.module.js';
+import { OcrModule } from './ocr/ocr.module.js';
+import mysql2 from 'mysql2';
+import 'dotenv/config';
 @Module({
   imports: [
     EnvModule.register({ path: '/config/env.json', class: Env }),
@@ -41,7 +42,7 @@ require('dotenv').config()
         console.log('Using ssl', database.ssl?.ca, process.env.SQL_CERT)
         return {
           dialect: 'mysql',
-          dialectModule: require('mysql2'),
+          dialectModule: mysql2,
           host: hostname,
           port: +port,
           username: username,

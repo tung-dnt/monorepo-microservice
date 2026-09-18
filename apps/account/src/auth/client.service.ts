@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { ClientModel, ClientSchema } from '../common/schema/account';
-import { CreateClientDto, UpdateClientDto } from '../common/dto';
+import { ClientModel, ClientSchema } from '../common/schema/account/index.js';
+import { CreateClientDto, UpdateClientDto } from '../common/dto.js';
 
 @Injectable()
 export class ClientService {

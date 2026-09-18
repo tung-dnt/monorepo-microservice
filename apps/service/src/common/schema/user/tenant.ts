@@ -1,5 +1,5 @@
 import { Column, PrimaryKey, Table } from "sequelize-typescript";
-import { BaseEntity } from "../base";
+import { BaseEntity } from "../base/index.js";
 
 @Table({ tableName: "tenants" })
 export class TenantSchema extends BaseEntity {

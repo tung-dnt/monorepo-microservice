@@ -3,7 +3,7 @@ import axios, {
   AxiosResponse,
   CreateAxiosDefaults,
 } from 'axios';
-import { ConfirmEmailPayload } from './interface';
+import { ConfirmEmailPayload } from './interface.js';
 
 interface IDefaultOptions {
   baseURL: string;

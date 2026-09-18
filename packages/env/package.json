@@ -24,8 +24,8 @@
     "class-transformer": "0.5.1",
     "dotenv": "16.4.7"
   },
-  "publishConfig": {
-    "directory": "dist",
-    "linkDirectory": true
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
   }
 }

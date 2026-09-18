@@ -12,7 +12,7 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { LocationsService } from './locations.service';
+import { LocationsService } from './locations.service.js';
 
 @Controller('location')
 export class LocationsController {

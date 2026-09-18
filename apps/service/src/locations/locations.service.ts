@@ -6,12 +6,13 @@ import {
   ExpenseSchema,
   LocationModel,
   LocationSchema,
-} from '../common/schema/user';
+} from '../common/schema/user/index.js';
 import { InjectModel } from '@nestjs/sequelize';
-import { PaginatedQuery, paginatedQuery } from '../common/pagination';
-import { LocationWithExpenses } from '../common/types';
-import { omit, pick } from 'lodash';
-import { FilePostService } from '../filepost/filepost.service';
+import { PaginatedQuery, paginatedQuery } from '../common/pagination.js';
+import { LocationWithExpenses } from '../common/types.js';
+import lodash from 'lodash';
+const { omit, pick } = lodash;
+import { FilePostService } from '../filepost/filepost.service.js';
 
 @Injectable()
 export class LocationsService {

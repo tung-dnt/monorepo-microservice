@@ -11,22 +11,22 @@ import {
   ConfirmRegisterPayload,
   LoginPayload,
   RegisterPayload,
-} from './common/interface';
+} from './common/interface.js';
 import {
   RoleModel,
   RoleSchema,
   AccountModel,
   AccountSchema,
-} from './common/schema/user';
+} from './common/schema/user/index.js';
 import { InjectModel } from '@nestjs/sequelize';
-import { MailSenderClient } from './common/axios.client';
+import { MailSenderClient } from './common/axios.client.js';
 import { EnvService } from '@nhl/env';
-import { Env } from './common/env';
-import { AuthCodeService } from './auth/auth-code.service';
-import { TemplateEnum } from './common/constant';
-import { ClientService } from './auth/client.service';
-import { OAuthService } from './auth/oauth.service';
-import { hashPassword, verifyPassword } from './common/utils';
+import { Env } from './common/env.js';
+import { AuthCodeService } from './auth/auth-code.service.js';
+import { TemplateEnum } from './common/constant.js';
+import { ClientService } from './auth/client.service.js';
+import { OAuthService } from './auth/oauth.service.js';
+import { hashPassword, verifyPassword } from './common/utils.js';
 
 @Injectable()
 export class AppService {

@@ -1,4 +1,4 @@
-import { ExpenseSchema, LocationSchema } from './schema/user';
+import { ExpenseSchema, LocationSchema } from './schema/user/index.js';
 
 export type LocationWithExpenses = LocationSchema &
   Pick<

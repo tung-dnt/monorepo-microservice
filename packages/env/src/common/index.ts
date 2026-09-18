@@ -1,5 +1,5 @@
 import { IsString, IsNumberString, IsUrl, IsDefined, IsEnum } from "class-validator";
-import { DatabaseEnv } from "./database";
+import { DatabaseEnv } from "./database.js";
 
 export enum Environment {
   Development = "dev",

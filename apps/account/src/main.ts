@@ -1,8 +1,8 @@
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from './app.module.js';
 import { ValidationPipe } from '@nestjs/common';
 import { EnvService } from '@nhl/env';
-import { Env } from './common/env';
+import { Env } from './common/env.js';
 import { AllExceptionsFilter } from '@nhl/error/filter';
 
 async function bootstrap() {

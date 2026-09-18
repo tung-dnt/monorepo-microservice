@@ -7,7 +7,7 @@ import {
   UploadedFiles,
   UseInterceptors,
 } from '@nestjs/common';
-import { OcrService } from './ocr.service';
+import { OcrService } from './ocr.service.js';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { Express } from 'express';
 

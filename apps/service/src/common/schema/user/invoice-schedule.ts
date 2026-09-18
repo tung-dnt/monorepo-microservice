@@ -1,7 +1,7 @@
 import { Column, DataType, ForeignKey, PrimaryKey, Table } from 'sequelize-typescript';
-import { BaseEntity } from '../base';
-import { InvoiceSchema } from './invoice';
-import { LocationSchema } from './location';
+import { BaseEntity } from '../base/index.js';
+import { InvoiceSchema } from './invoice.js';
+import { LocationSchema } from './location.js';
 
 @Table({ tableName: 'invoice_schedules' })
 export class InvoiceScheduleSchema extends BaseEntity {

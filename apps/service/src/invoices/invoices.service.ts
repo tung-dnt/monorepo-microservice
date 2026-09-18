@@ -1,9 +1,9 @@
 import { Injectable, NotImplementedException } from '@nestjs/common';
-import { PaginatedQuery } from '../common/pagination';
-import { RentProvidersService } from '../rent-providers/rent-providers.service';
-import { TenantService } from '../tenant/tenant.service';
-import { LocationsService } from '../locations/locations.service';
-import { ExpenseService } from '../expense/expense.service';
+import { PaginatedQuery } from '../common/pagination.js';
+import { RentProvidersService } from '../rent-providers/rent-providers.service.js';
+import { TenantService } from '../tenant/tenant.service.js';
+import { LocationsService } from '../locations/locations.service.js';
+import { ExpenseService } from '../expense/expense.service.js';
 import { InjectModel } from '@nestjs/sequelize';
 import {
   InvoiceExpenseModel,
@@ -12,10 +12,10 @@ import {
   InvoiceSchema,
   InvoiceScheduleModel,
   InvoiceScheduleSchema,
-} from '../common/schema/user';
+} from '../common/schema/user/index.js';
 import { EnvService } from '@nhl/env';
-import { Env } from '../common/env';
-import { MailSenderClient } from '../common/mail-sender.client';
+import { Env } from '../common/env.js';
+import { MailSenderClient } from '../common/mail-sender.client.js';
 
 @Injectable()
 export class InvoicesService {

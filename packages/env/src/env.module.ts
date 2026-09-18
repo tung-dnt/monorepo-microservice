@@ -2,8 +2,8 @@ import { DynamicModule, Global, Module } from "@nestjs/common";
 import {
   ConfigurableModuleClass,
   CustomConfigModuleOptions,
-} from "./common/module/config.module-definition";
-import { EnvService } from "./env.service";
+} from "./common/module/config.module-definition.js";
+import { EnvService } from "./env.service.js";
 @Global()
 @Module({})
 export class EnvModule extends ConfigurableModuleClass {

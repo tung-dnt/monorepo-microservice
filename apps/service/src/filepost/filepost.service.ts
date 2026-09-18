@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import axios from 'axios';
-import FormData = require('form-data');
-import { Env } from '../common/env';
+import FormData from 'form-data';
+import { Env } from '../common/env.js';
 import { EnvService } from '@nhl/env';
 import 'multer';
 

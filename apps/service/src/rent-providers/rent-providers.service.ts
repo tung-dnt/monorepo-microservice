@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { RentProviderModel, RentProviderSchema } from '../common/schema/user';
-import { UpsertRentProviderDto } from './dto/upsert-provider.dto';
+import { RentProviderModel, RentProviderSchema } from '../common/schema/user/index.js';
+import { UpsertRentProviderDto } from './dto/upsert-provider.dto.js';
 import { InjectModel } from '@nestjs/sequelize';
-import { PaginatedQuery, paginatedQuery } from '../common/pagination';
+import { PaginatedQuery, paginatedQuery } from '../common/pagination.js';
 
 @Injectable()
 export class RentProvidersService {

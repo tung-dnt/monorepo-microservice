@@ -1,7 +1,7 @@
 import { Column, DataType, ForeignKey, Table } from "sequelize-typescript";
-import { LocationSchema } from "./location";
-import { ExpenseSchema } from "./expense";
-import { BaseEntity } from "../base";
+import { LocationSchema } from "./location.js";
+import { ExpenseSchema } from "./expense.js";
+import { BaseEntity } from "../base/index.js";
 
 @Table({
   modelName: "expenses_location",

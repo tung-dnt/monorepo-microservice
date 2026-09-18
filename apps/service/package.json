@@ -7,12 +7,12 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "node esbuild.config.js",
+    "build": "tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main.mjs",
+    "start:prod": "node dist/main.js",
     "lint": "eslint \"{src,apps,libs}/**/*.ts\" --fix"
   },
   "dependencies": {
@@ -52,14 +52,12 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
-    "@anatine/esbuild-decorators": "^0.2.19",
     "@types/axios": "0.14.0",
     "@types/lodash": "4.14.191",
     "@types/node": "^24.0.0",
     "@types/sequelize": "4.28.19",
     "@typescript-eslint/eslint-plugin": "5.0.0",
     "@typescript-eslint/parser": "5.0.0",
-    "esbuild": "^0.28.2",
     "eslint": "8.0.1",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
@@ -70,5 +68,6 @@
     "tsconfig-paths": "4.1.0",
     "typescript": "6.0.3",
     "webpack": "^5.105.4"
-  }
+  },
+  "type": "module"
 }
