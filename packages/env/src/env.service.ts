@@ -1,7 +1,7 @@
 import { Injectable, Inject } from "@nestjs/common";
 import * as fs from "fs";
 import * as path from "path";
-import { Path } from "@nestjs/config";
+import { Path, PathValue } from "@nestjs/config";
 import { ClassConstructor, plainToInstance } from "class-transformer";
 import { validateSync } from "class-validator";
 import { CustomConfigModuleOptions } from "./common/module/config.module-definition";
@@ -23,10 +23,13 @@ export class EnvService<T extends object> {
     console.log("Load file success", this.env);
   }
 
-  get<K extends Path<T>>(key: K) {
+  // Returns the value AT the given path, e.g. get('db.sqlUrl') is a string.
+  // Without the explicit PathValue return type this inferred `any` under TS 4.x and
+  // `T` under TS 6, so every call site was either unchecked or wrongly typed as T.
+  get<K extends Path<T>>(key: K): PathValue<T, K> {
     return key
       .split(".")
-      .reduce((total, key) => (total = total[key]), this.env);
+      .reduce<any>((value, segment) => value?.[segment], this.env);
   }
 
   private load(path: string): T {

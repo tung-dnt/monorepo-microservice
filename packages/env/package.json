@@ -10,13 +10,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@nestjs/common": "9.0.0",
-    "@nestjs/config": "2.3.1",
-    "@nestjs/core": "9.0.0",
+    "@nestjs/common": "^12.0.3",
+    "@nestjs/config": "^12.0.0",
+    "@nestjs/core": "^12.0.3",
     "@types/lodash": "4.14.191",
-    "@types/node": "16.0.0",
-    "typescript": "4.7.4",
-    "reflect-metadata": "0.1.13",
+    "@types/node": "^24.0.0",
+    "typescript": "6.0.3",
+    "reflect-metadata": "^0.2.2",
     "rxjs": "7.2.0"
   },
   "dependencies": {

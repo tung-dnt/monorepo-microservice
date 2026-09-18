@@ -42,10 +42,25 @@ async function bundle() {
     outdir: 'dist',
     bundle: true,
     platform: 'node',
-    target: 'node16',
+    target: 'node20',   // @nestjs/core@12 engines: node >= 20
     splitting: false,
     format: 'esm',
     outExtension: { '.js': '.mjs' },
+    // esbuild rewrites CJS `require()` in ESM output to a __require shim that throws
+    // "Dynamic require of X is not supported" unless a real `require` is already in
+    // scope. Defining one here makes the shim resolve to the genuine require, so CJS
+    // dependencies can load Node builtins (uuid -> crypto, sequelize, mysql2, ...).
+    // __filename/__dirname are provided for the same interop reason.
+    banner: {
+      js: [
+        "import { createRequire as __nodeCreateRequire } from 'node:module';",
+        "import { fileURLToPath as __nodeFileURLToPath } from 'node:url';",
+        "import { dirname as __nodeDirname } from 'node:path';",
+        'const require = __nodeCreateRequire(import.meta.url);',
+        'const __filename = __nodeFileURLToPath(import.meta.url);',
+        'const __dirname = __nodeDirname(__filename);',
+      ].join('\n'),
+    },
     sourcemap: 'external',
     plugins: [
       {
