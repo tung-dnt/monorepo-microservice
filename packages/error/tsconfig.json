@@ -18,6 +18,7 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "outDir": "./dist",
+    "tsBuildInfoFile": "./dist/.tsbuildinfo",
     "rootDir": "./src",
     "moduleResolution": "nodenext",
     "useDefineForClassFields": false
