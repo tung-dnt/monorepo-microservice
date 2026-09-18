@@ -23,9 +23,11 @@ import { AuthModule } from './auth/auth.module';
           username: username,
           database: pathname.replace('/', ''),
           models: [AccountSchema, RoleSchema, AuthCodeSchema, ClientSchema],
-          sync: {
-            force: true,
-          },
+          // `force: true` DROPS AND RECREATES every table on boot, i.e. on every
+          // serverless cold start. Opt-in only; never set outside a scratch DB.
+          ...(process.env.DB_SYNC_FORCE === 'true' && {
+            sync: { force: true },
+          }),
         };
       },
     }),

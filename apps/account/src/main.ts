@@ -16,6 +16,11 @@ async function bootstrap() {
 
   await app.startAllMicroservices();
 
-  await app.listen(env.get('port'), env.get('host'));
+  // `host` is an @IsUrl() value, not a bind address: on Vercel it resolves to a
+  // public IP the container cannot bind (EADDRNOTAVAIL). Bind all interfaces there.
+  const port = Number(process.env.PORT ?? env.get('port'));
+
+  if (process.env.VERCEL) await app.listen(port);
+  else await app.listen(port, env.get('host'));
 }
 bootstrap();
